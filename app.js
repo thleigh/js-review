@@ -54,12 +54,15 @@ function printFriends(array) {
     });
 };
 
-friends.forEach(friend => {
-    printFriends(friend);
-});
+// friends.forEach(function) {
 
-printFriends(friends);
+// }
 
+// friends.forEach(friend => {
+//     printFriends(friend);
+// });
+
+// printFriends(friends);
 
 //standard function
 function addNumbers(num1, num2) {
@@ -75,3 +78,23 @@ let multiplyNumbers = function (num1,num2) {
 let subtractNumbers = (num1, num2) => {
     return num1 - num2;
 };
+
+//DOM
+let container = document.querySelector(".container");
+
+//create an element
+let headerTwo = document.createElement("h2");
+headerTwo.textContent = "My First JS Review";
+
+container.appendChild(headerTwo);
+
+//add a class to hearderTwo
+//two ways to do this
+headerTwo.classList.add("subtitle");
+//and
+headerTwo.setAttribute("class", "header-two"); 
+//you can create two classes in one
+headerTwo.classList.add("subtitle", "header-two");
+
+//to remove attribute
+headerTwo.classList.remove("header-two");
