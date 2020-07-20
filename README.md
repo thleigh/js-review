@@ -62,3 +62,35 @@
     //to remove attribute
     headerTwo.classList.remove("header-two");
 ```
+
+### More DOM Manipulation
+
+```javascript
+//add click eventListener
+headerTwo.addEventListener("click", function() {
+    headerTwo.textContent = "Tanner";
+});
+
+//make another element
+    const headerThree = document.createElement("h2");
+    headerThree.textContent = "Friends";
+    container.appendChild(headerThree);
+
+    const list = document.createElement("ul");
+    //iterate through my friends array
+    for (let i = 0; i < friends.length; i++) {
+        let eachFriend= friends[i];
+
+        //create a li
+        let listItem = document.createElement("li");
+        //add textContent to that li
+        listItem.textContent = eachFriend; 
+        //append that to a ul (unordered list)
+        list.appendChild(listItem);
+    };
+
+    //create eventListener function to append to container
+    headerThree.addEventListener('click', function() {
+        container.appendChild(list);
+    })
+```
