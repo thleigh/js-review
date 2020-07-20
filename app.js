@@ -46,3 +46,32 @@ console.log(tesla);
 console.log(tesla.vehicles.vehicleThree);
 console.log(tesla["vehicles"]["vehicleThree"]);
 tesla.print();
+
+//forEach function review
+function printFriends(array) {
+    array.forEach(friend => {
+        console.log(friend);
+    });
+};
+
+friends.forEach(friend => {
+    printFriends(friend);
+});
+
+printFriends(friends);
+
+
+//standard function
+function addNumbers(num1, num2) {
+    return num1 + num2;
+};
+
+//function expression
+let multiplyNumbers = function (num1,num2) {
+    return num1 * num2;
+};
+
+//arrow function
+let subtractNumbers = (num1, num2) => {
+    return num1 - num2;
+};
