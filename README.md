@@ -1,2 +1,3 @@
 # JavaScript Review
-This is my review of Javascript .
+
+**This is my review of Javascript.
