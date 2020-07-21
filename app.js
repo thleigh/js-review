@@ -48,11 +48,11 @@ console.log(tesla["vehicles"]["vehicleThree"]);
 tesla.print();
 
 //forEach function review
-function printFriends(array) {
-    array.forEach(friend => {
-        console.log(friend);
-    });
-};
+// function printFriends(array) {
+//     array.forEach(friend => {
+//         console.log(friend);
+//     });
+// };
 
 // friends.forEach(function) {
 

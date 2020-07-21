@@ -1,13 +1,13 @@
 //isInside
 function isInside(array, ele) {
-    let element = array.indexOf("ele");
-    if (element <= 0) {
+    let element = array.indexOf(ele);
+    if (element >= 0) {
         return true;
     } else {
         return false;
     }
 }
-console.log(isInside(['taylor', 'rome', 'adam'], 'ele'));
+console.log(isInside(['taylor', 'rome', 'adam'], 'rome'));
 
 //reverseStr
 function reverseStr(str) {
@@ -47,19 +47,31 @@ function everyOtherWord(sentence) {
     let result = [];
     let splitSentence = sentence.split(" "); //makes an array for every word
     for (let i = 0; i < splitSentence.length; i++) {
-        if(splitSentence[i] % 2 === 0) {
-            result.push(splitSentence);
+        if(i % 2 === 0) {
+            result.push(splitSentence[i]);
         }
     }
     return result;
 }
-everyOtherWord('hello how are you doing on this lovely day?'); // => [ 'hello', 'are', 'doing', 'this', 'day?' ]
+console.log(everyOtherWord('hello how are you doing on this lovely day?')); // => [ 'hello', 'are', 'doing', 'this', 'day?' ]
 
 //word Yeller
 function wordYeller(sentence) {
-    let removeExclamation = sent.split("!").join("");
-    let newSentence = removeExclamation.split(" ");
-    let finalSentence = newSentence.join("! ");
+    let newSentence = sentence.split(" ");
+    let result = [];
+
+
+    for (let i = 0; i < newSentence.length; i++) {
+        let word = newSentence[i];
+        let lastLetter = word[word.length - 1];
+
+        if(lastLetter === "." || lastLetter === "," || lastLetter === "!" || lastLetter === "?" || lastLetter === ";") {
+            result.push(word + " ");
+        }   else {
+            result.push(word + "! ");
+        }
+    }
+    let finalSentence = result.join("");
     return finalSentence;
 }
 let sent = "Stop it now! Please, wont you stop?";
