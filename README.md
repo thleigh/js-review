@@ -92,5 +92,120 @@ headerTwo.addEventListener("click", function() {
     //create eventListener function to append to container
     headerThree.addEventListener('click', function() {
         container.appendChild(list);
+    })̌
+```
+
+## Understanding Prmoises
+A promise 3 states:
+
+1. Pending: You aren't sure what you'll receive.
+2. Fulfilled: You request is fulfilled and you get what you want.
+3. Rejected: Your request is rejected and you don't get what you want.
+
+```javascript
+    var boolean = false;
+
+    var willIGetIt = new Promise(
+        function (resolve, reject) {
+            if (isItTrue) {
+                var element = {
+                    name: 'Tanner',
+                    color: 'yellow'
+                };
+                resolve(element); // fulfilled
+            } else {
+                var reason = new Error('your request is fulfilled');
+                reject(reason); // reject
+            }
+
+        }
+    );
+```
+
+## API's
+API: a set of functions and procedures allowing the creation of applications that access the features or data of an operating system, application, or other service.
+
+```javascript
+    fetch(requestURL)
+    .then(function(responseData){
+        // Fetch will package the response into an object with some methods that allow us to do some useful things with the response.
+        // Use the .json() method to return the data in JSON format
+            return responseData.json();
     })
+    .then(function(jsonData){
+        // whatever we return in the first .then promise will be passed into this callback function
+        // do some stuff with the jsonData here
+    })
+    .catch(function(error){
+        // any errors encountered in the request or the .then promises above will be passed into this callback
+        console.log("Oh no, there's been an error!", error);
+    })
+```
+## Object Oriented Programming: Prototypal Inheritance
+
+```javascript
+    const tanner = {
+        name: 'Tanner',
+        goodBoy: true,
+        gender: 'boy',
+        favoriteSport: 'soccer'
+    }
+
+    const rome = {
+        name: 'Rome',
+        goodBoy: true,
+        job: 'GA instructor'
+    }
+
+    rome.__proto__ = tanner;
+
+    console.log(rome.favoriteSport);
+    //will output rome's favorite sport as soccer.
+```
+
+## Constructor Functions
+
+```javascript
+    //Constructor functions are always in caps.
+    function Spurs(name, number, position) {
+        this.name = name;
+        this.number = number;
+        this.position = position;
+    }
+
+    let son = new Spurs('Heung-min Son', '7', 'Winger');
+    let kane = new Spurs('Harry Kane', '10', 'Striker');
+
+    console.log(son);
+    console.log(kane);
+```
+
+## Class
+
+```javascript
+    class GithubProfile {
+        constructor(username, name, url) {
+            this.username = username;
+            this.name = name;
+            this.url = url;
+        }
+        intro() {
+            console.log(`My name is ${this.name} and my username is ${this.username}.`)
+            }
+        }
+        fetch('https://api.github.com/users/thleigh')
+        .then(response => {
+        return response.json()
+        })
+        .then(data => {
+            console.log(data);
+            let githubURL = data.url;
+            let githubUsername = data.login;
+            let githubName = data.name;
+
+            let tanner = new GithubProfile(githubUsername, githubName, githubURL);
+            console.log(tanner);
+
+            tanner.intro();
+        });
 ```

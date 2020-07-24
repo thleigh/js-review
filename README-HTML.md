@@ -41,3 +41,25 @@
 
     <div id="specific-container"></div>
 ``` 
+
+## Forms
+
+```html
+    //examples of forms
+    <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+    </div>
+    <div>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" min="1" max="80" required>
+    </div>
+    <div>
+        <label for="file">File</label>
+        <input type="file" name="file" id="file">
+    </div>
+```
