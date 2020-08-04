@@ -49,3 +49,11 @@ fs.readFile('story.txt', 'utf8', (err, data) => {
 
 ## NPM (Node Package Manager)
 
+1. Go to the NPM website
+2. To install: npm install chosenNpm
+3. At the top you must include
+```javascript
+    const variable = require('chosenNpm');
+```
+4. To make sure the node moldes folder doesn't upload to github, create a .gitignore file and type node_modules in the first line. 
+
