@@ -57,3 +57,13 @@ fs.readFile('story.txt', 'utf8', (err, data) => {
 ```
 4. To make sure the node moldes folder doesn't upload to github, create a .gitignore file and type node_modules in the first line. 
 
+## Express
+installation: npm i express
+Express is a light-weight, web application framework for writing RESTful APIs in Node.js.
+
+
+### HTTP Verbs
+1. get
+2. post
+3. put
+4. delete
